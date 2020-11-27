@@ -1,0 +1,12 @@
+<html>
+<body>
+<table border="2">
+
+    <tr><td>Id No:</td><td>{{ object.idno }}</td></tr>
+     <tr><td>Name</td><td>{{ object.name }}</td></tr>
+     <tr><td>Salary</td><td>{{ object.salary }}</td></tr>
+</table>
+
+<a href="{% url 'new' %}" >Create Employee</a>
+</body>
+</html>

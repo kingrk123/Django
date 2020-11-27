@@ -1,0 +1,28 @@
+<html>
+<form action="{% url 'saveacc' %}" method="post">
+<h1><center>Update Page</center></h1>
+{% csrf_token %}
+
+   <legend align="center" style="color: royalblue">Update Form</legend>
+    <table align="center" border="2">
+        <tr>
+            <th>ID NO: <input type="hidden" name="idno" value="{{ data.Accno }}">{{ data.Accno }}</th>
+        </tr>
+        <tr>
+            <th>NAME: <input type="text" name="name" placeholder="Name" autofocus value="{{ data.Name }}" required></th>
+        </tr>
+        <tr>
+            <th>Balance: <input type="number" name="Balance" placeholder="Balance"  value="{{ data.Balance }}" required></th>
+        </tr>
+
+        <tr>
+            <th><input type="submit"  value="update" name="type"></th>
+        </tr>
+
+
+
+
+
+</table>
+</form>
+</html>

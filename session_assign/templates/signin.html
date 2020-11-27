@@ -1,0 +1,22 @@
+{% include 'starter.html' %}
+<br><br><br><br><br>
+<form action="{% url 'sign' %}" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th colspan="2" style="text-align: center"><h2>SignIn Page</h2></th>
+        </tr>
+        <tr>
+            <th style="text-align: center">User Name :</th>
+            <th style="text-align: center"><input type="text" required name="uname" placeholder="User Name"></th>
+        </tr>
+        <tr>
+            <th style="text-align: center">Password :</th>
+            <th style="text-align: center"><input type="password" required name="password" placeholder="Password"></th>
+        </tr>
+    </table><br>
+    <center><button type="submit">Login</button></center>
+</form><br>
+{% for x in messages %}
+    <center><h4>{{ x }}</h4></center>
+{% endfor %}

@@ -1,0 +1,61 @@
+<html>
+<body>
+<style>
+    div.c {
+        text-transform: capitalize;
+    }
+     #tableContainer-1 {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  #tableContainer-2 {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+        }
+    .block {
+  display: block;
+  width: 70%;
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+</style>
+<div id="tableContainer-1">
+  <div id="tableContainer-2">
+<form action="show/" method="post">
+    {% csrf_token %}
+
+<table align="center" border="2" width="315">
+    <tr style="padding: 5px 5px">
+        <th colspan="2"align="center">Name</th>
+    </tr>
+    <tr>
+        <td>First Name:</td>
+        <td><input type="text" size="28" placeholder="First Name" title="Contain atleast two character" name="firstname" pattern=".{2,}"required></td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td><input type="text" size="28" placeholder="Last Name" title="Contain atleast two character"  name="lastname" pattern=".{2,}" required></td>
+    </tr>
+    <tr >
+        <td colspan="2"align="center"><button  type="submit" class="block">Show</button></td>
+    </tr>
+    <tr>
+<center>
+    <td colspan="2">
+    <div class="c"> <h2>Full Name: <span style="color: royalblue">{{ message.f }}  {{ message.l }}</span> </h2></div></td>
+
+    </center>
+    </tr>
+
+
+    </table>
+
+</form>
+    </div>
+</body>
+</html>

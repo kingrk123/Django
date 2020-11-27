@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" BORDER="2">
+    <tr>
+        <th width="100">ID No</th>
+        <th width="100">Name</th>
+        <th width="100">Salary</th>
+    </tr>
+    {% for k,v in data.items %}
+    <tr>
+         <td>{{ k }}</td>
+         <td>{{ v.name }}</td>
+         <td>{{ v.salary  }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

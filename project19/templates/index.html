@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1><a href="/registration/">Create Account</a></h1>
+    <h1><a href="{% url 'viewall' %}" >View Account</a></h1>
+    {% if message %}
+        <h2 style="color: blue">{{ message }}</h2>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <table align="center" border="2">
+        <tr bgcolor="#adff2f">
+            <th width="100">ACCOUNT NO</th>
+            <th width="200">NAME</th>
+            <th width="150">SALARY</th>
+            <th width="150">PASSWORD</th>
+            <th width="100">UPDATE</th>
+            <th width="100">DELETE</th>
+        </tr>
+
+        {% for x in data %}
+            <tr>
+            <th width="100">{{ x.Accno }}</th>
+            <th width="200">{{ x.Name }}</th>
+            <th width="150">{{ x.Balance }}</th>
+                <th width="150">{{ x.password }}</th>
+
+            <th width="100">
+                <a href="{% url 'update' %}?update_idno={{ x.Accno }}">
+                <img src="{% static 'images/update.png' %}">
+                    </a>
+
+            </th>
+            <th width="100">DELETE</th>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+</body>
+</html>

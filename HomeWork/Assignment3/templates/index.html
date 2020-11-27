@@ -1,0 +1,60 @@
+<html>
+<body>
+<form action="show/" method="post">
+    {% csrf_token %}
+<table align="center" border="2">
+    <tr >
+        <th colspan="2"align="center">Name</th>
+    </tr>
+    <tr>
+        <td>Student No: </td>
+        <td><input type="number" placeholder="Student No" name="sno" min="1001" title="Student No begin from 1001" required></td>
+    </tr>
+    <tr>
+        <td>Student Name: </td>
+        <td><input type="text" placeholder="Student Name" name="sname" required></td>
+    </tr>
+    <tr>
+        <td>Subject1: </td>
+        <td><input type="number" placeholder="subject1" name="sub1" min="1" max="100" title="Marks not more than 100 & less than 1" required></td>
+    </tr>
+    <tr>
+        <td>Subject2: </td>
+        <td><input type="number" placeholder="subject2" name="sub2" min="1" max="100" title="Marks not more than 100 & less than 1" required></td>
+    </tr>
+    <tr>
+        <td>Subject3: </td>
+        <td><input type="number" placeholder="subject3" name="sub3" min="1" max="100" title="Marks not more than 100 & less than 1" required></td>
+    </tr>
+    <tr >
+        <td colspan="2"align="center"><button onclick="button()" type="submit">Display</button></td>
+    </tr>
+    </table>
+    </form>
+<center>
+      <span>
+          {% if marks %}
+                  {{ "Total Marks" }} : {{ marks.to }}<br><br>
+                  {{ "Average Percentage" }} : {{ marks.av }}<br><br>
+              {% endif %}
+      </span>
+{% if marks %}
+                  {% if marks.subject1 > 35 %}
+                      <font color="green">{{ "Pass Subject1 :" }} {{ marks.subject1 }}</font>
+                      {% else %}
+                      <font color="red">{{ "Fail Subject1 :" }} {{ marks.subject1 }}</font>
+                      {% endif %}<br><br>
+                  {% if marks.subject2 > 35 %}
+                      <font color="green">{{ "Pass Subject2 :" }} {{ marks.subject2 }}</font>
+                      {% else %}
+                      <font color="red">{{ "Fail Subject2 :" }} {{ marks.subject2 }}</font>
+                      {% endif %}<br><br>
+                  {% if marks.subject3 > 35 %}
+                      <font color="green">{{ "Pass Subject3 :" }} {{ marks.subject3 }}</font>
+                      {% else %}
+                      <font color="red">{{ "Fail Subject3 :" }} {{ marks.subject3 }}</font>
+                      {% endif %}
+              {% endif %}
+</center>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table align="center" border="2">
+        <tr align="center">
+            <th width="100">ID No</th>
+            <th width="100">Name</th>
+            <th width="100">Marks</th>
+        </tr>
+        {% for m, n in data.items %}
+                <tr>
+                <td>{{ m }}</td>
+                <td>{{ n.name }}</td>
+                    {% if n.marks.0 >= 35 %}
+                        <td style="background: greenyellow;font: 12px"> Marathi:  {{ n.marks.0 }} </td>
+                        {% else %}
+                        <td style="background: #ff6778;font: 12px"> Marathi:  {{ n.marks.0 }} -Fail</td>
+                    {% endif %}
+                </tr>
+                    <tr>
+                    <td> </td>
+                    <td> </td>
+                    {% if n.marks.1 >= 35 %}
+                        <td style="background: greenyellow;font: 12px"> Hindi:  {{ n.marks.1 }} </td>
+                        {% else %}
+                        <td style="background: #FF6778;font: 12px"> Hindi:  {{ n.marks.1 }} -Fail </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    {% if n.marks.2 >= 35 %}
+                        <td style="background: greenyellow;font: 12px"> English:  {{ n.marks.2 }} </td>
+                        {% else %}
+                        <td style="background: #FF6778;font: 12px"> English:  {{ n.marks.2 }} -Fail</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    {% if n.marks.3 >= 35 %}
+                        <td style="background: greenyellow;font: 12px"> Math:  {{ n.marks.3 }} </td>
+                        {% else %}
+                        <td style="background: #FF6778;font: 12px"> Math:  {{ n.marks.3 }} -Fail </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    {% if n.marks.4 >= 35 %}
+                        <td style="background: greenyellow;font: 12px"> Science:  {{ n.marks.4 }} </td>
+                        {% else %}
+                        <td style="background: #FF6778;font: 12px"> Science:  {{ n.marks.4 }} -Fail </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>
